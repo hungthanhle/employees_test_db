@@ -22,9 +22,9 @@
 --  Any similarity to existing people is purely coincidental.
 -- 
 
-DROP DATABASE IF EXISTS other_db;
-CREATE DATABASE IF NOT EXISTS other_db;
-USE other_db;
+DROP DATABASE IF EXISTS page_fill_db;
+CREATE DATABASE IF NOT EXISTS page_fill_db;
+USE page_fill_db;
 
 SELECT 'CREATING DATABASE STRUCTURE' as 'INFO';
 
@@ -45,7 +45,8 @@ CREATE TABLE employees (
     last_name   VARCHAR(16)     NOT NULL,
     gender      ENUM ('M','F')  NOT NULL,    
     hire_date   DATE            NOT NULL,
-    PRIMARY KEY (emp_no)
+    PRIMARY KEY (emp_no),
+    KEY (first_name)
 );
 
 CREATE TABLE departments (
